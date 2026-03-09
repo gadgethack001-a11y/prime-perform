@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prime Perform – Reclaim Your Power Naturally</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #f0d080;
+      --dark: #0d0d0d;
+      --dark2: #141414;
+      --dark3: #1c1c1c;
+      --text: #ede5d5;
+      --muted: #7a7060;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); font-family: 'DM Sans', sans-serif; color: var(--text); overflow-x: hidden; }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: linear-gradient(90deg, #1a0e00, #2a1800, #1a0e00);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 1px;
+    }
+    .topbar span { color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px 80px;
+      background: radial-gradient(ellipse at 50% -10%, #2a1500 0%, #0d0d0d 55%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+      top: -100px; left: 50%; transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold-light);
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; padding: 8px 22px; border-radius: 40px;
+      margin-bottom: 30px;
+      animation: fadeUp .6s ease both;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6.5vw, 4.6rem);
+      font-weight: 900; line-height: 1.1;
+      max-width: 850px; margin-bottom: 22px;
+      animation: fadeUp .7s ease .1s both;
+    }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.18rem);
+      color: var(--muted); max-width: 580px; margin-bottom: 20px;
+      animation: fadeUp .7s ease .2s both;
+    }
+
+    /* Product image hero */
+    .hero-product {
+      width: min(340px, 80vw);
+      margin: 28px auto;
+      filter: drop-shadow(0 20px 50px rgba(201,168,76,0.2));
+      animation: fadeUp .7s ease .25s both;
+    }
+
+    .cta-wrap { animation: fadeUp .7s ease .3s both; }
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #d4a030, #c9a84c, #b8902a);
+      color: #000; font-weight: 800; font-size: 1.1rem;
+      padding: 20px 52px; border-radius: 6px; text-decoration: none;
+      box-shadow: 0 10px 36px rgba(201,168,76,0.4);
+      transition: transform .2s, box-shadow .2s; letter-spacing: .3px;
+    }
+    .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 18px 50px rgba(201,168,76,0.55); }
+    .cta-sub { margin-top: 12px; font-size: .8rem; color: #555; }
+
+    .trust-bar {
+      display: flex; justify-content: center; gap: 36px; flex-wrap: wrap;
+      margin-top: 56px; padding-top: 40px; border-top: 1px solid #1e1e1e;
+      animation: fadeUp .7s ease .45s both;
+    }
+    .trust-item { text-align: center; }
+    .trust-num { display: block; font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--gold); }
+    .trust-lbl { font-size: .7rem; color: #555; letter-spacing: 2px; text-transform: uppercase; }
+
+    /* ── PROBLEM ── */
+    .problem {
+      background: #f7f2e8; color: #1a1a1a;
+      padding: 90px 20px; text-align: center;
+    }
+    .sec-tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; color: #b08030; margin-bottom: 14px; }
+    .problem h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); max-width: 700px; margin: 0 auto 20px; }
+    .problem p { color: #777; font-size: 1.02rem; max-width: 600px; margin: 0 auto 14px; }
+    .problem-box {
+      max-width: 600px; margin: 30px auto 0;
+      background: #fffbf0; border-left: 4px solid var(--gold);
+      padding: 22px 26px; border-radius: 4px; text-align: left;
+      font-weight: 600; color: #1a1a1a; font-size: 1.05rem; line-height: 1.7;
+    }
+
+    /* ── BENEFITS ── */
+    .benefits { background: var(--dark); padding: 90px 20px; text-align: center; }
+    .benefits h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); margin-bottom: 50px; }
+    .benefits h2 span { color: var(--gold); }
+    .ben-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; max-width: 920px; margin: 0 auto; }
+    .ben-card {
+      background: var(--dark3); border: 1px solid #252525; border-radius: 14px;
+      padding: 32px 22px; transition: border-color .3s, transform .3s;
+    }
+    .ben-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+    .ben-icon { font-size: 2.4rem; margin-bottom: 14px; }
+    .ben-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 10px; }
+    .ben-card p { font-size: .87rem; color: var(--muted); line-height: 1.75; }
+
+    /* ── PRODUCT SHOWCASE ── */
+    .showcase {
+      background: #0a0a0a; padding: 80px 20px; text-align: center;
+    }
+    .showcase h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 14px; }
+    .showcase p { color: var(--muted); max-width: 560px; margin: 0 auto 44px; }
+    .packages {
+      display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+      max-width: 900px; margin: 0 auto;
+    }
+    .pkg {
+      background: var(--dark3); border: 1px solid #252525; border-radius: 14px;
+      padding: 28px 20px; text-align: center; width: 240px;
+      transition: border-color .3s, transform .3s;
+      text-decoration: none; color: var(--text);
+    }
+    .pkg:hover { border-color: var(--gold); transform: translateY(-5px); }
+    .pkg.popular { border-color: var(--gold); position: relative; }
+    .pkg.popular::before {
+      content: '⭐ MOST POPULAR';
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--gold); color: #000;
+      font-size: .68rem; font-weight: 800; letter-spacing: 1.5px;
+      padding: 4px 14px; border-radius: 20px; white-space: nowrap;
+    }
+    .pkg img { width: 100%; max-width: 180px; margin-bottom: 16px; }
+    .pkg-title { font-weight: 700; font-size: 1rem; margin-bottom: 6px; }
+    .pkg-price { color: var(--gold); font-size: 1.4rem; font-weight: 800; margin-bottom: 14px; }
+    .pkg-btn {
+      display: block; background: var(--gold); color: #000;
+      font-weight: 700; font-size: .85rem; padding: 10px 20px;
+      border-radius: 6px; text-decoration: none;
+      transition: background .2s;
+    }
+    .pkg-btn:hover { background: var(--gold-light); }
+
+    /* ── INGREDIENTS ── */
+    .ingredients { background: #f4efe4; color: #1a1a1a; padding: 90px 20px; text-align: center; }
+    .ingredients h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 10px; }
+    .ingredients .sub { color: #888; font-size: 1rem; max-width: 520px; margin: 0 auto 44px; }
+    .ing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; max-width: 860px; margin: 0 auto; }
+    .ing-item {
+      background: #fff; border-radius: 10px; padding: 18px 16px;
+      display: flex; align-items: center; gap: 14px;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(0,0,0,.06); text-align: left;
+    }
+    .ing-item img { width: 54px; height: 54px; object-fit: contain; }
+    .ing-name { font-weight: 700; font-size: .9rem; color: #1a1a1a; }
+    .ing-desc { font-size: .78rem; color: #999; margin-top: 3px; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--dark2); padding: 90px 20px; text-align: center; }
+    .testimonials h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 14px; }
+    .rating-img { max-width: 260px; margin: 0 auto 44px; display: block; }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; max-width: 920px; margin: 0 auto; }
+    .testi-card { background: #1c1c1c; border: 1px solid #262626; border-radius: 14px; padding: 28px 22px; text-align: left; }
+    .stars { color: var(--gold); font-size: .95rem; letter-spacing: 3px; margin-bottom: 14px; }
+    .testi-card p { font-size: .93rem; font-style: italic; color: #ccc; line-height: 1.75; margin-bottom: 16px; }
+    .testi-name { font-size: .75rem; color: var(--gold); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+
+    /* ── BONUSES ── */
+    .bonuses { background: #0f0a00; padding: 90px 20px; text-align: center; }
+    .bonuses h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 10px; }
+    .bonuses .sub { color: var(--muted); max-width: 520px; margin: 0 auto 44px; }
+    .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 860px; margin: 0 auto; }
+    .bonus-card { background: #161006; border: 1px solid #2a1e00; border-radius: 14px; padding: 0 0 24px; overflow: hidden; }
+    .bonus-card img { width: 100%; height: 160px; object-fit: cover; }
+    .bonus-card .bc-body { padding: 18px 18px 0; }
+    .bonus-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 8px; line-height: 1.4; }
+    .bonus-card .price { font-size: .8rem; color: var(--muted); }
+    .bonus-card .price s { color: #555; }
+    .bonus-card .free { color: var(--gold); font-weight: 700; }
+
+    /* ── GUARANTEE ── */
+    .guarantee { background: #f9f4e8; color: #1a1a1a; padding: 90px 20px; text-align: center; }
+    .guar-box {
+      max-width: 660px; margin: 0 auto;
+      background: linear-gradient(135deg, #fffbf0, #fff8e0);
+      border: 2px solid var(--gold); border-radius: 20px; padding: 52px 40px;
+    }
+    .guar-icon { font-size: 4rem; margin-bottom: 18px; }
+    .guar-box h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #8a6010; margin-bottom: 16px; }
+    .guar-box p { color: #7a6040; font-size: 1rem; line-height: 1.85; }
+
+    /* ── FINAL CTA ── */
+    .final {
+      background: radial-gradient(ellipse at 50% 100%, #1a1000 0%, #0a0a0a 60%);
+      padding: 100px 20px 110px; text-align: center;
+    }
+    .final h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5.5vw, 3.4rem); margin-bottom: 18px; line-height: 1.12; }
+    .final h2 span { color: var(--gold); }
+    .final p { color: var(--muted); font-size: 1.05rem; max-width: 520px; margin: 0 auto 42px; }
+    .perks { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 26px; }
+    .perk { font-size: .82rem; color: #555; }
+    .disclaimer { font-size: .7rem; color: #333; max-width: 580px; margin: 50px auto 0; line-height: 1.9; }
+
+    /* ── FOOTER ── */
+    footer { background: #080808; padding: 28px 20px; text-align: center; border-top: 1px solid #161616; }
+    footer p { font-size: .75rem; color: #333; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media(max-width:600px) {
+      .guar-box { padding: 36px 20px; }
+      .trust-bar { gap: 20px; }
+      .packages { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">🔥 LIMITED OFFER: <span>Free Shipping + 3 Bonus Guides</span> — Today Only!</div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">⚡ Over 15,000 Men Already Transformed</div>
+    <h1>Stop Letting Age<br/><em>Steal Your Power.</em><br/>Take It Back — Naturally.</h1>
+    <p class="hero-sub">Prime Perform is a 100% natural formula designed to restore male strength, confidence, and energy — starting in just 7 days.</p>
+
+    <img class="hero-product"
+      src="https://primeperformpro.com/wp-content/uploads/2024/09/3B-1024x881.png"
+      alt="Prime Perform 3 Bottle Pack"/>
+
+    <div class="cta-wrap">
+      <a href="https://primeperformpro.com/welcome/#aff=gadgethack00159cf" class="cta-btn">
+        👉 YES! I Want My Prime Perform Now →
+      </a>
+      <p class="cta-sub">🔒 Secure Checkout &nbsp;|&nbsp; 60-Day Money Back Guarantee &nbsp;|&nbsp; Free Shipping</p>
+    </div>
+
+    <div class="trust-bar">
+      <div class="trust-item">
+        <span class="trust-num">15,634+</span>
+        <span class="trust-lbl">Happy Men</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">4.9 ★</span>
+        <span class="trust-lbl">Avg Rating</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">60 Days</span>
+        <span class="trust-lbl">Money Back</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">FDA</span>
+        <span class="trust-lbl">Registered Facility</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="sec-tag">Does This Sound Like You?</div>
+    <h2>You've Tried Everything.<br/>Nothing Worked.</h2>
+    <p>Millions of men wake up every day feeling like a shadow of their former selves — low energy, zero confidence, and a private life slowly fading away.</p>
+    <p>Expensive prescriptions with side effects. Embarrassing doctor visits. Supplements that promise the world and deliver nothing.</p>
+    <div class="problem-box">
+      💡 There's a reason nothing worked — they were all treating the <em>symptoms</em>, not the root cause. Prime Perform is different. It works on the source.
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <div class="sec-tag" style="color:var(--gold)">What You'll Feel</div>
+    <h2>Real Results Starting in<br/><span>Just 7 Days</span></h2>
+    <div class="ben-grid">
+      <div class="ben-card">
+        <div class="ben-icon">🔥</div>
+        <h3>Stronger Performance</h3>
+        <p>Feel firmer, more confident, and ready — whenever you want, not just when your body allows it.</p>
+      </div>
+      <div class="ben-card">
+        <div class="ben-icon">⚡</div>
+        <h3>Energy & Vitality</h3>
+        <p>Wake up with real drive. Feel the energy you had in your 30s — without caffeine or stimulants.</p>
+      </div>
+      <div class="ben-card">
+        <div class="ben-icon">😎</div>
+        <h3>Unshakeable Confidence</h3>
+        <p>Walk into any room knowing you've got what it takes. Confidence that shows everywhere you go.</p>
+      </div>
+      <div class="ben-card">
+        <div class="ben-icon">💊</div>
+        <h3>Zero Side Effects</h3>
+        <p>100% natural ingredients. No prescriptions needed. No awkward pharmacy trips. Just real results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT PACKAGES -->
+  <section class="showcase">
+    <div class="sec-tag" style="color:var(--gold)">Choose Your Package</div>
+    <h2>Get Prime Perform at a Special Price</h2>
+    <p>96% of customers choose the 6-bottle pack — it's what gives the best long-term results.</p>
+    <div class="packages">
+      <a href="https://primeperformpro.com/welcome/#aff=gadgethack00159cf" class="pkg">
+        <img src="https://primeperformpro.com/wp-content/uploads/2025/06/Productos-ingles-06.webp" alt="1 Bottle"/>
+        <div class="pkg-title">1 Bottle — Starter</div>
+        <div class="pkg-price">Best Value</div>
+        <span class="pkg-btn">Order Now →</span>
+      </a>
+      <a href="https://primeperformpro.com/welcome/#aff=gadgethack00159cf" class="pkg popular">
+        <img src="https://primeperformpro.com/wp-content/uploads/2025/08/producto-paquetes-03.webp" alt="3 Bottles"/>
+        <div class="pkg-title">3 Bottles + 3 Free Bonuses</div>
+        <div class="pkg-price">Save More</div>
+        <span class="pkg-btn">Order Now →</span>
+      </a>
+      <a href="https://primeperformpro.com/welcome/#aff=gadgethack00159cf" class="pkg">
+        <img src="https://primeperformpro.com/wp-content/uploads/2025/08/producto-paquetes-01.webp" alt="6 Bottles"/>
+        <div class="pkg-title">6 Bottles + All Bonuses</div>
+        <div class="pkg-price">Best Results</div>
+        <span class="pkg-btn">Order Now →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- INGREDIENTS -->
+  <section class="ingredients">
+    <div class="sec-tag">Inside Every Capsule</div>
+    <h2>7 Powerful Natural Ingredients</h2>
+    <p class="sub">Each ingredient is precisely selected for its proven ability to support male vitality, hormone balance, and peak performance.</p>
+    <div class="ing-grid">
+      <div class="ing-item">
+        <img src="https://primeperformpro.com/wp-content/uploads/2024/09/Extracto-de-Epimedium@15x.png" alt="Epimedium"/>
+        <div><div class="ing-name">Epimedium Extract</div><div class="ing-desc">Boosts blood flow & libido</div></div>
+      </div>
+      <div class="ing-item">
+        <img src="https://primeperformpro.com/wp-content/uploads/2024/09/Eurycoma-Longifolia@15x.png" alt="Eurycoma"/>
+        <div><div class="ing-name">Eurycoma Longifolia</div><div class="ing-desc">Supports testosterone levels</div></div>
+      </div>
+      <div class="ing-item">
+        <img src="https://primeperformpro.com/wp-content/uploads/2024/09/extracto-de-palma-enana-americana@15x.png" alt="Saw Palmetto"/>
+        <div><div class="ing-name">Saw Palmetto</div><div class="ing-desc">Prostate & hormone support</div></div>
+      </div>
+      <div class="ing-item">
+        <img src="https://primeperformpro.com/wp-content/uploads/2024/09/name-silvestre@15x.png" alt="Wild Yam"/>
+        <div><div class="ing-name">Wild Yam Root</div><div class="ing-desc">Natural hormone balance</div></div>
+      </div>
+      <div class="ing-item">
+        <img src="https://primeperformpro.com/wp-content/uploads/2024/09/extracto-de-raiz-de-zarzaparrilla@15x.png" alt="Sarsaparilla"/>
+        <div><div class="ing-name">Sarsaparilla Root</div><div class="ing-desc">Increases stamina & energy</div></div>
+      </div>
+      <div class="ing-item">
+        <img src="https://primeperformpro.com/wp-content/uploads/2024/09/raiz-de-ortiga@15x.png" alt="Nettle Root"/>
+        <div><div class="ing-name">Nettle Root</div><div class="ing-desc">Free testosterone support</div></div>
+      </div>
+      <div class="ing-item">
+        <img src="https://primeperformpro.com/wp-content/uploads/2024/09/Extracto-de-quelato-de-aminoacido-boro-5@15x.png" alt="Boron"/>
+        <div><div class="ing-name">Boron Chelate</div><div class="ing-desc">Amplifies all ingredients</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="sec-tag" style="color:var(--gold)">Real Men. Real Results.</div>
+    <h2>15,634 Men Can't Be Wrong</h2>
+    <img class="rating-img"
+      src="https://primeperformpro.com/wp-content/uploads/2024/09/estrellas-01-9075868-1024x195.webp"
+      alt="5 Star Ratings"/>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"I was skeptical at first. But after just 2 weeks, my wife noticed the difference before I even said anything. This stuff is real."</p>
+        <div class="testi-name">— Marcus T., 47, Texas</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Tried 3 other products before this one. Prime Perform is the only one that actually delivered. I feel 10 years younger — no joke."</p>
+        <div class="testi-name">— David R., 52, Florida</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"The energy alone is worth it. But the bedroom results? My confidence is through the roof. Best decision I made this year."</p>
+        <div class="testi-name">— James K., 44, California</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="bonuses">
+    <div class="sec-tag" style="color:var(--gold)">Free With 3 or 6 Bottles</div>
+    <h2>🎁 Exclusive Bonus Guides</h2>
+    <p class="sub">Order 3 or 6 bottles today and unlock these premium guides — absolutely FREE.</p>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <img src="https://primeperformpro.com/wp-content/uploads/2025/06/ingles-40-1024x677.webp" alt="Bonus 1"/>
+        <div class="bc-body">
+          <h3>How to Last More Than 60 Minutes in Bed</h3>
+          <p class="price"><s>$55</s> → <span class="free">FREE Today</span></p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="https://primeperformpro.com/wp-content/uploads/2025/06/ingles-35-1024x677.webp" alt="Bonus 2"/>
+        <div class="bc-body">
+          <h3>5 Positions That Drive Her Wild</h3>
+          <p class="price"><s>$53</s> → <span class="free">FREE Today</span></p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="https://primeperformpro.com/wp-content/uploads/2025/06/ingles-41-1024x677.webp" alt="Bonus 3"/>
+        <div class="bc-body">
+          <h3>How to Trigger Multiple Orgasms</h3>
+          <p class="price"><s>$61</s> → <span class="free">FREE Today</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guarantee">
+    <div class="guar-box">
+      <div class="guar-icon">🛡️</div>
+      <h2>60-Day Money Back Guarantee</h2>
+      <p>Try Prime Perform completely risk-free for 60 full days. If you're not absolutely thrilled with your results — for <strong>any reason whatsoever</strong> — contact us and we'll refund every single penny within 48 hours. No questions asked. No hassle.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="sec-tag" style="color:var(--gold)">The Time Is Now</div>
+    <h2>Your Best Years Aren't<br/>Behind You — <span>They're Ahead.</span></h2>
+    <p>Join over 15,000 men who chose to stop settling. Order today and get free shipping + 3 exclusive bonus guides worth $169.</p>
+    <a href="https://primeperformpro.com/welcome/#aff=gadgethack00159cf" class="cta-btn" style="font-size:1.15rem;padding:22px 58px;">
+      🔥 Claim My Special Discount Now →
+    </a>
+    <div class="perks">
+      <span class="perk">✅ Free Shipping</span>
+      <span class="perk">✅ 60-Day Guarantee</span>
+      <span class="perk">✅ 3 Free Bonus Guides</span>
+      <span class="perk">✅ Secure Checkout</span>
+    </div>
+    <p class="disclaimer">
+      * These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Results may vary. Individual results are not guaranteed. Consult your physician before use if you have a medical condition or are taking medication. © 2025 Prime Perform. All Rights Reserved.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>This is an affiliate promotional page. | <a href="https://primeperformpro.com/refund-policy/" style="color:#555">Refund Policy</a> | <a href="https://primeperformpro.com/politica-de-privacidad-ingles/" style="color:#555">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
